@@ -53,6 +53,7 @@ defmodule MakeupCSS.LexerTest do
 
   test "pseudoselectords" do
     assert lex(":hover") == [{:name_constant, %{}, ":hover"}]
+    assert lex("::first-of-type") == [{:name_constant, %{}, "::first-of-type"}]
 
     assert lex("a:hover") == [
              {:name_builtin, %{}, "a"},
@@ -67,11 +68,13 @@ defmodule MakeupCSS.LexerTest do
 
   test "class selector" do
     assert lex(".foo") == [{:name_class, %{}, ".foo"}]
+    assert lex(".foo-bar") == [{:name_class, %{}, ".foo-bar"}]
     assert lex("div.foo") == [{:name_builtin, %{}, "div"}, {:name_class, %{}, ".foo"}]
   end
 
   test "id selector" do
     assert lex("#foo") == [{:name_constant, %{}, "#foo"}]
+    assert lex("#foo-bar") == [{:name_constant, %{}, "#foo-bar"}]
     assert lex("div#foo") == [{:name_builtin, %{}, "div"}, {:name_constant, %{}, "#foo"}]
   end
 

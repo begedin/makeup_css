@@ -47,20 +47,23 @@ defmodule MakeupCSS.Lexer do
   class_selector =
     [?.]
     |> ascii_char()
-    |> concat(ascii_string([?_, ?0..?9, ?A..?Z, ?a..?z], min: 1))
+    |> concat(ascii_string([?0..?9, ?A..?Z, ?a..?z], min: 1))
+    |> optional(repeat(concat(ascii_char([?-, ?_]), ascii_string([?a..?z], min: 1))))
     |> token(:name_class)
 
   id_selector =
     [?#]
     |> ascii_char()
-    |> concat(ascii_string([?_, ?0..?9, ?A..?Z, ?a..?z], min: 1))
+    |> concat(ascii_string([?0..?9, ?A..?Z, ?a..?z], min: 1))
+    |> optional(repeat(concat(ascii_char([?-, ?_]), ascii_string([?a..?z], min: 1))))
     |> token(:name_constant)
 
   pseudo_selector =
     ":"
     |> string()
     |> optional(string(":"))
-    |> concat(ascii_string([?-, ?0..?9, ?A..?Z, ?a..?z], min: 1))
+    |> concat(ascii_string([?0..?9, ?A..?Z, ?a..?z], min: 1))
+    |> optional(repeat(concat(ascii_char([?-, ?_]), ascii_string([?a..?z], min: 1))))
     |> token(:name_constant)
 
   tag_selector =

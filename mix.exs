@@ -1,7 +1,7 @@
 defmodule MakeupCSS.MixProject do
   use Mix.Project
 
-  @version "0.2.2"
+  @version "0.2.3"
 
   @url "https://github.com/begedin/makeup_css"
   def project do
