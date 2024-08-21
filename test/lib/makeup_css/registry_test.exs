@@ -1,8 +1,8 @@
-defmodule MakeupCss.RegistryTest do
+defmodule MakeupCSS.RegistryTest do
   use ExUnit.Case, async: true
 
   alias Makeup.Registry
-  alias MakeupCss.Lexer
+  alias MakeupCSS.Lexer
 
   describe "the Js lexer has successfully registered itself:" do
     test "language name" do

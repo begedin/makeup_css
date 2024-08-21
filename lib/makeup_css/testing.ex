@@ -1,7 +1,7 @@
-defmodule MakeupCss.Testing do
+defmodule MakeupCSS.Testing do
   @moduledoc false
   alias Makeup.Lexer.Postprocess
-  alias MakeupCss.Lexer
+  alias MakeupCSS.Lexer
 
   # This function has two purposes:
   # 1. Ensure deterministic lexer output (no random prefix)

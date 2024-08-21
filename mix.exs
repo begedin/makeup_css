@@ -1,7 +1,7 @@
-defmodule MakeupCss.MixProject do
+defmodule MakeupCSS.MixProject do
   use Mix.Project
 
-  @version "0.2.0"
+  @version "0.2.1"
 
   @url "https://github.com/begedin/makeup_css"
   def project do
@@ -45,7 +45,7 @@ defmodule MakeupCss.MixProject do
     [
       extra_applications: [],
       deps: deps(),
-      mod: {MakeupCss.Application, []}
+      mod: {MakeupCSS.Application, []}
     ]
   end
 
@@ -74,7 +74,7 @@ defmodule MakeupCss.MixProject do
       raise "cannot build docs because escript for ex_doc is not installed"
     end
 
-    args = ["MakeupCss", @version, Mix.Project.compile_path()]
+    args = ["MakeupCSS", @version, Mix.Project.compile_path()]
     opts = ~w[--main MakeupCSS.Lexer --source-ref v#{@version} --source-url #{@url}]
     System.cmd(ex_doc, args ++ opts)
     Mix.shell().info("Docs built successfully")

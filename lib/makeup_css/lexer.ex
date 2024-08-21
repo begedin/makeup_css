@@ -1,4 +1,4 @@
-defmodule MakeupCss.Lexer do
+defmodule MakeupCSS.Lexer do
   import Makeup.Lexer.Combinators
   import Makeup.Lexer.Groups
   import NimbleParsec

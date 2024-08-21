@@ -1,7 +1,7 @@
-defmodule MakeupCss.LexerTest do
+defmodule MakeupCSS.LexerTest do
   use ExUnit.Case
 
-  import MakeupCss.Testing, only: [lex: 1]
+  import MakeupCSS.Testing, only: [lex: 1]
 
   test "whitespace" do
     assert lex("   ") == [{:whitespace, %{}, "   "}]
