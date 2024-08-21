@@ -56,7 +56,7 @@ defmodule MakeupCSS.MixProject do
     [
       extras: ["README.md", "CHANGELOG.md"],
       source_ref: "v#{@version}",
-      main: "README"
+      main: "readme"
     ]
   end
 end
