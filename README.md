@@ -63,7 +63,7 @@ use NimblePublisher
 
 Now, any code block declared as containing CSS should be highlighted.
 
-# Current state
+## Current state
 
 This is very much a work-in-progress, but it higlights your CSS in a useful way. It may or may not support SCSS in the future.
 
