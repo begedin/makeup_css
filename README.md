@@ -28,11 +28,11 @@ Adding the library will make the lexer application for CSS start automatically. 
 
 ```elixir
 Makeup.highlight("""
-.some-css {
+.someClass {
   color: red;
 }
 
-#id-selector {
+#idSelector {
   background: none;
 }
 
@@ -47,6 +47,20 @@ Makeup.stylesheet(style) # by default, the StyleMap.default style is used.
 ```
 
 Basically, use makeup as normal, but you can pass in CSS now.
+
+It works in hexdocs to: 
+
+```css
+.someClass {
+  color: red;
+}
+
+#idSelector {
+  background: none;
+}
+
+/* etc. */
+```
 
 ### Usage with NimblePublisher
 
