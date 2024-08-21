@@ -1,7 +1,7 @@
 defmodule MakeupCSS.MixProject do
   use Mix.Project
 
-  @version "0.2.1"
+  @version "0.2.2"
 
   @url "https://github.com/begedin/makeup_css"
   def project do
@@ -14,14 +14,8 @@ defmodule MakeupCSS.MixProject do
       # Package
       package: package(),
       description: description(),
-      aliases: aliases(),
+      aliases: [],
       docs: docs()
-    ]
-  end
-
-  defp aliases do
-    [
-      docs: &build_docs/1
     ]
   end
 
@@ -53,30 +47,16 @@ defmodule MakeupCSS.MixProject do
   defp deps do
     [
       {:makeup, "~> 1.1"},
-      {:ex_doc, "~> 0.34", only: :dev},
+      {:ex_doc, "~> 0.34", only: :dev, runtime: false},
       {:mix_test_watch, "~> 1.0", only: [:dev, :test], runtime: false}
     ]
   end
 
   def docs do
     [
-      extras: ["README.md"],
+      extras: ["README.md", "CHANGELOG.md"],
       source_ref: "v#{@version}",
-      main: "MakeupCSS.Lexer"
+      main: "README"
     ]
-  end
-
-  defp build_docs(_) do
-    Mix.Task.run("compile")
-    ex_doc = Path.join(Mix.path_for(:escripts), "ex_doc")
-
-    unless File.exists?(ex_doc) do
-      raise "cannot build docs because escript for ex_doc is not installed"
-    end
-
-    args = ["MakeupCSS", @version, Mix.Project.compile_path()]
-    opts = ~w[--main MakeupCSS.Lexer --source-ref v#{@version} --source-url #{@url}]
-    System.cmd(ex_doc, args ++ opts)
-    Mix.shell().info("Docs built successfully")
   end
 end
