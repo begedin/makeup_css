@@ -11,7 +11,7 @@ The package can be installed by adding `makeup` and `makeup_css` in `mix.exs`:
 def deps do
   [
     {:makeup, "x.y.z"},
-    {:makeup_elixir, "x.y.z"}
+    {:makeup_css, "x.y.z"}
   ]
 end
 ```
